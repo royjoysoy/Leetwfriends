@@ -1,0 +1,22 @@
+class Solution:
+    def isPalindrome(s) -> bool:
+        from re import sub
+        text1 = s.lower()
+        text2 = sub('[0-9]', '', text1)
+        punc = '[,.?!:;]'
+        text3 = sub(punc,'',text2)
+        text4 = sub(' ','',text3)
+
+        forward = text4[::]
+        backward = text4[::-1]
+        print(forward)
+        print(backward)
+    
+        if len(forward) != 0  or len(s) == 0 or forward == backward:
+            return True
+    
+        return False
+                
+    
+    string = '~!@#$%^&*()_+`1234567890-={}|[]\:";<>?,.\''
+    print(isPalindrome(string))
